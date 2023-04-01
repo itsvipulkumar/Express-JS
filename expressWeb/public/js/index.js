@@ -3,6 +3,8 @@ const btn = document.getElementById("btn");
 const cityname = document.getElementById("cityname");
 const cityValue = document.getElementById("cityValue");
 const tempVal = document.getElementById("tempValue");
+const country = document.getElementById("country");
+const Weatherstatus = document.getElementById("status");
 // const api=
 const getInfo = async (event) => {
     event.preventDefault();
@@ -15,8 +17,12 @@ const getInfo = async (event) => {
     // const arrData=dat
     // console.log(data.main.temp)
     // console.log(data[0].name)
+    console.log(data.weather[0].main)
+    console.log(data)
     tempVal.innerHTML = data.main.temp;
     cityValue.innerHTML = data.name;
+    country.innerHTML = data.sys.country;
+    Weatherstatus.innerHTML = data.weather[0].main;
 };
 // cityVal.innerHTML = <p>${data.cod}</p>;
 
